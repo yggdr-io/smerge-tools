@@ -1,0 +1,16 @@
+[
+    {
+        "caption": "View Tag Details",
+        "command": "git",
+        "args": {
+            "argv": [
+                "tag",
+                "--list",
+                "--no-column",
+                "--format=%(if:equals=tag)%(objecttype)%(then)%(contents:subject)%(if)%(contents:body)%(then)%0a%0a%(contents:body)%(end)%(else)%(refname:short) is a lightweight tag and has no message.%(end)",
+                "--",
+                "$tag_name"
+            ]
+        }
+    }
+]
